@@ -5,11 +5,11 @@ const taskRouter = require("./routers/task");
 const app = express();
 app.use(express.json());
 
-app.use("/task", taskRouter);
+app.use("/tasks", taskRouter);
 
 async function main() {
     try {
-        await mongoose.connect("mongodb://http://127.0.0.1:27017/task");
+        await mongoose.connect("mongodb://http://127.0.0.1:27017/tasks");
         app.listen(3000);
     }
     catch(err) {
