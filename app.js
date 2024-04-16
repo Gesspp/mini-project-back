@@ -5,6 +5,8 @@ const taskRouter = require("./routers/task");
 const app = express();
 app.use(express.json());
 
+app.use("/task", taskRouter);
+
 async function main() {
     try {
         await mongoose.connect("mongodb://http://127.0.0.1:27017/task");
